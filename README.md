@@ -1,30 +1,41 @@
-This project implements a complete, end-to-end data pipeline on the Microsoft Azure platform, demonstrating proficiency in modern ETL/ELT development and data governance. The primary goal was to take scattered retail data from multiple sources (database and API) and transform it into a single, reliable source for business intelligence.
+Project Explanation
+This project demonstrates proficiency in the full SQL Data Analytics lifecycle, encompassing the foundational steps of data structuring and cleansing, performing Exploratory Data Analysis (EDA), and executing complex analytical queries to answer specific business questions. It focuses on the crucial distinction between Dimensions (descriptive data) and Measures (quantitative, aggregable data).
 
-Architecture & Data Flow
-The solution utilizes a Medallion Architecture built on top of Azure Data Lake Storage (ADLS) Gen2 and orchestrated by key Azure services. | Phase | Core Azure Tools Used | Functionality & Key Concepts | | :--- | :--- | :--- | | 1. Data Sources | Azure SQL DB, REST API (JSON) | Ingestion of Transactional Data (SQL) and Customer Data (API). | | 2. Ingestion & Storage | Azure Data Factory (ADF), ADLS Gen2 | ADF orchestrates the pipeline, moving raw, multi-source data into the Bronze Layer of the Data Lake. | | 3. Processing & Curation | Azure Databricks (Spark) | Cleansing, transformation, and creation of the Silver and Gold layers. Advanced SQL analytics (Window Functions, CTEs) are used here. | | 4. Visualization & Insight | Power BI | Connects to the Gold Layer to deliver interactive dashboards. |
+Project Outcome and Deliverables
+The main outcome is a structured, 
+clean dataset (the Data Warehouse)  
+series of sophisticated SQL queries that transform raw data into actionable business intelligence.
 
+Key deliverables include:
+A Structured Data Warehouse Schema: Designed to support efficient analytical queries.
+SQL Scripts for ETL/ELT: Scripts for Data Cleansing, Integration, and Loading.
+Comprehensive Analytical Reports: A set of advanced SQL queries demonstrating various analysis techniques.
 
-Key Technical Skills Demonstrated
-This project showcases expertise across the data lifecycle, including both ETL/ELT and analytical skills:
+Key Stages and Analytical Techniques
+The project is broken down into three main phases, moving from foundational setup to advanced insights:
+1. Data Warehousing & Preparation
+This phase ensures the data is clean, structured, and ready for analysis using an ETL/ELT Process.
 
-Cloud Data Integration: Designing automated pipelines using Azure Data Factory (ADF).
+Goal: Organize, structure, and prepare the raw data.
+Key Tasks:
+Defining the data architecture.
+Data Cleansing and Data Integration.
+Data Modeling: Identifying and separating Dimensions (e.g., Category, Product, Country, Birthdate) from Measures (e.g., Sales, Quantity, Price).
 
-Data Lake Governance: Implementing the Medallion Architecture (Bronze, Silver, Gold) to ensure data quality and lineage in ADLS Gen2.
+2. Exploratory Data Analysis (EDA)
+This phase involves understanding the data's characteristics and scope through basic querying.
+Goal: Understand the data structure and content.
+Key Tasks:
+Profiling Dimensions: Using DISTINCT to explore unique values in dimensions (e.g., Country, Category).
+Date Exploration: Determining the data range using MIN/MAX on date dimensions and calculating duration using functions like DATEDIFF.
+Profiling Measures: Using simple aggregation functions like SUM and AVG to get key metrics.
 
-Big Data Transformation: Utilizing Azure Databricks/Spark for scalable data cleansing and aggregation.
-
-
-Advanced Analytics: Performing complex analysis (like Cumulative Analysis, Change-Over-Time Trends, Performance Analysis) using advanced SQL techniques (Window Functions, CTEs).
-
-
-
-Business Intelligence: Providing final, curated data optimized for and consumed by Power BI.
-
-3. Project Outcomes
-Centralized Data Repository: Established a single source of truth (ADLS Gen2) by consolidating data from disparate sources (SQL DB and API).
-
-Data Reliability: Enforced strict data quality rules through the Silver and Gold layers, making the data business-ready and curated.
-
-Actionable Insights: Delivered Interactive Dashboards in Power BI, providing clear Sales Trends and Customer Metrics for decision-making.
-
-Cloud Transition: Successfully demonstrated the ability to transition from legacy ETL (SSIS) to modern, scalable cloud data engineering practices.
+3. Advanced Data Analytics
+This phase utilizes complex SQL techniques (including Window Functions and CTEs) to answer business questions.
+Goal: Generate reports and answer business questions through complex queries.
+Key Analytical Tasks:Aggregation (Measure By Dimension): Calculating totals/averages grouped by different dimensions (e.g., Total Sales By Country)
+Change-Over-Time Analysis: Analyzing trends over time (e.g., Total Sales By Year).
+Cumulative Analysis: Calculating running totals and moving averages using Window Functions.
+Performance Analysis: Comparing a measure to a target (e.g., Current Sales vs. Average Sales or Previous Year Sales) using Window Functions.
+Part-to-Whole (Proportional) Analysis: Calculating the percentage contribution of each dimension to the total (e.g., Sales/Total Sales * 100 By Category).
+Data Segmentation: Categorizing data based on measure ranges using the CASE WHEN statement (e.g., Total Products By Sales Range, categorized as Low, Medium, or Large).
